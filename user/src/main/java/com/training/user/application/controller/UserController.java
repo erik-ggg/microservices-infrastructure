@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/users")
@@ -16,6 +17,21 @@ public class UserController {
 
     private final static Logger logger = LoggerFactory.getLogger(UserController.class);
     private final UserService userService;
+
+//    @PostMapping
+//    public UUID purchaseItem(@RequestBody PurchaseDTO purchaseDTO) {
+//        logger.info("Received request: POST /purchaseItem with params: ");
+//        logger.info("Created new purchase with OrderID {}", newUser);
+//
+//    }
+
+    @GetMapping
+    public UUID getUserOrders(@RequestParam UUID userId) {
+        logger.info("Received request: GET /getUserOrders");
+        var orders = this.userService.getOrders(userId);
+        logger.info("GET /getUserOrders returned {}", orders);
+        return orders;
+    }
 
     @PostMapping
     public UserDTO addNewUser(@RequestBody UserDTO userDTO) {
