@@ -5,10 +5,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/erik-ggg/microservices-infrastructure.git
+          uri: https://github.com/erik-ggg/micros-config-repo
           clone-on-start: true
-  security:
-    user:
-      name: root
-      password: root
+          default-label: main
 

@@ -25,4 +25,4 @@ spring:
     active: dev
   config:
     import:
-      optional:configserver:http://root:root@localhost:8888
+      optional:configserver:http://localhost:8888
