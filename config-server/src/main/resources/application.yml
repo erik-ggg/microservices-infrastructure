@@ -5,8 +5,10 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/erik-ggg/microservices-infrastructure
-#  security:
-#    user:
-#      name: root
-#      password: s3cr3t
+          uri: https://github.com/erik-ggg/microservices-infrastructure.git
+          clone-on-start: true
+  security:
+    user:
+      name: root
+      password: root
+

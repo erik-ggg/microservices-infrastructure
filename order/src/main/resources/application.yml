@@ -14,3 +14,15 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+  cloud:
+    config:
+      uri: http://localhost:8888
+      username: root
+      password: root
+  application:
+    name: order-micro
+  profiles:
+    active: dev
+  config:
+    import:
+      optional:configserver:http://root:root@localhost:8888
