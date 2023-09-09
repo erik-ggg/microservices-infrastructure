@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.UUID;
 
 @Entity
 @NoArgsConstructor
@@ -15,7 +14,7 @@ public class User {
 
     @Id
     @GeneratedValue
-    private UUID id;
+    private Long id;
     private String surname;
     private String lastname;
     private int age;

@@ -1,4 +1,4 @@
-package com.training.warehouse.configuration;
+package com.training.warehouse.infrastructure.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

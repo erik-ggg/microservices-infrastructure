@@ -22,7 +22,12 @@ public class ItemController {
         return itemInputPort.addItem(title, description, price);
     }
 
-    @GetMapping
+    @GetMapping("/{itemId}")
+    public Item getItemById(@PathVariable Long itemId) {
+        return itemInputPort.getItemById(itemId);
+    }
+
+    @GetMapping("/all")
     public List<Item> getAll() {
         return itemInputPort.getAll();
     }

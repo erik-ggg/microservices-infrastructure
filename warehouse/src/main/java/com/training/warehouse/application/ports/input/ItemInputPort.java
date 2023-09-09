@@ -18,6 +18,12 @@ public class ItemInputPort implements ItemUseCase {
     }
 
     @Override
+    public Item getItemById(final Long id) {
+        var item = itemRepository.findById(id);
+        return item.orElse(null);
+    }
+
+    @Override
     public Item addItem(String title, String description, BigDecimal price) {
         var newItem = new Item(title, description, price);
         return itemRepository.save(newItem);

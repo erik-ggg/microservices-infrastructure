@@ -1,30 +1,26 @@
 package com.training.order.domain.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.UUID;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "user_orders")
+@NoArgsConstructor
+@Getter
 public class Order {
 
     @Id
     @GeneratedValue
-    private UUID id;
+    private Long id;
 
-    private UUID userId;
+    private Long userId;
 
-    private UUID itemsId;
-
-    private int quantity;
-
-    public Order(UUID userId, UUID itemsId, int quantity) {
+    public Order(Long userId) {
         this.userId = userId;
-        this.itemsId = itemsId;
-        this.quantity = quantity;
-    }
-
-    public Order() {
-
     }
 }

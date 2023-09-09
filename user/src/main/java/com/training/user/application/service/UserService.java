@@ -2,10 +2,11 @@ package com.training.user.application.service;
 
 import com.training.user.application.dto.PurchaseDTO;
 import com.training.user.application.dto.UserDTO;
+import com.training.user.application.dto.order.OrderDTO;
 import com.training.user.application.mapper.UserMapper;
 import com.training.user.application.usecases.UserUseCase;
 import com.training.user.domain.model.User;
-import com.training.user.infrastructure.adapter.OrderServiceRestAdapter;
+import com.training.user.infrastructure.configuration.OrderRestTemplate;
 import com.training.user.infrastructure.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -21,13 +22,12 @@ public class UserService implements UserUseCase {
 
     private final UserMapper userMapper;
 
-    private final OrderServiceRestAdapter orderServiceRestAdapter;
+    private final OrderRestTemplate orderRestTemplate;
 
     @Override
-    public UUID getOrders(UUID userID) {
+    public OrderDTO getOrders(Long userID) {
         UUID transactionId = UUID.randomUUID();
-        orderServiceRestAdapter.makeUserOrdersRequest(userID, transactionId);
-        return null;
+        return orderRestTemplate.callUserOrdersRequest(userID, transactionId);
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.training.user.application.controller;
 
 import com.training.user.application.dto.UserDTO;
+import com.training.user.application.dto.order.OrderDTO;
 import com.training.user.application.service.UserService;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
@@ -25,11 +26,11 @@ public class UserController {
 //
 //    }
 
-    @GetMapping
-    public UUID getUserOrders(@RequestParam UUID userId) {
-        logger.info("Received request: GET /getUserOrders");
+    @GetMapping("/{userId}/orders")
+    public OrderDTO getUserOrders(@PathVariable Long userId, @RequestParam UUID transactionId) {
+        logger.info("Received request {} - GET /getUserOrders", transactionId);
         var orders = this.userService.getOrders(userId);
-        logger.info("GET /getUserOrders returned {}", orders);
+        logger.info("{} - GET /getUserOrders returned {}", transactionId, orders);
         return orders;
     }
 

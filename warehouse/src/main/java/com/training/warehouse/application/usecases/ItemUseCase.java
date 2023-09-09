@@ -7,6 +7,9 @@ import java.util.List;
 
 public interface ItemUseCase {
 
+    Item getItemById(Long id);
+
     Item addItem(String title, String description, BigDecimal price);
+
     List<Item> getAll();
 }

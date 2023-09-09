@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a2b62cb2-0c6c-4626-ad46-fc1f677f324f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../order/src/main/java/com/training/order/application/dto/OrderDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../order/src/main/java/com/training/order/domain/model/OrderItemPK.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../order/src/main/java/com/training/order/domain/model/OrderItems.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../order/src/main/java/com/training/order/infrastructure/adapter/WarehouseRestTemplate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../order/src/main/java/com/training/order/infrastructure/configuration/KafkaProducerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../order/src/main/java/com/training/order/infrastructure/configuration/KafkaTopicConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../order/src/main/java/com/training/order/infrastructure/repository/OrderItemsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../user/src/main/java/com/training/user/application/dto/order/OrderDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../user/src/main/java/com/training/user/infrastructure/configuration/OrderRestTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../order/src/main/java/com/training/order/application/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../order/src/main/java/com/training/order/application/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../order/src/main/java/com/training/order/application/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../order/src/main/java/com/training/order/application/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../order/src/main/java/com/training/order/application/usecases/OrderUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../order/src/main/java/com/training/order/application/usecases/OrderUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../order/src/main/java/com/training/order/domain/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/../order/src/main/java/com/training/order/domain/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../order/src/main/java/com/training/order/infrastructure/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../order/src/main/java/com/training/order/infrastructure/repository/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../order/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../order/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user/src/main/java/com/training/user/application/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user/src/main/java/com/training/user/application/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user/src/main/java/com/training/user/application/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user/src/main/java/com/training/user/application/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user/src/main/java/com/training/user/application/usecases/UserUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user/src/main/java/com/training/user/application/usecases/UserUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user/src/main/java/com/training/user/domain/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user/src/main/java/com/training/user/domain/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user/src/main/java/com/training/user/infrastructure/adapter/OrderServiceRestAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user/src/main/java/com/training/user/infrastructure/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user/src/main/java/com/training/user/infrastructure/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warehouse/src/main/java/com/training/warehouse/application/ports/input/ItemInputPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/../warehouse/src/main/java/com/training/warehouse/application/ports/input/ItemInputPort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warehouse/src/main/java/com/training/warehouse/application/usecases/ItemUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../warehouse/src/main/java/com/training/warehouse/application/usecases/ItemUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warehouse/src/main/java/com/training/warehouse/configuration/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../warehouse/src/main/java/com/training/warehouse/infrastructure/configuration/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warehouse/src/main/java/com/training/warehouse/domain/entity/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/../warehouse/src/main/java/com/training/warehouse/domain/entity/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warehouse/src/main/java/com/training/warehouse/framework/adapters/input/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../warehouse/src/main/java/com/training/warehouse/framework/adapters/input/ItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warehouse/src/main/java/com/training/warehouse/infrastructure/persistence/ItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../warehouse/src/main/java/com/training/warehouse/infrastructure/persistence/ItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warehouse/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../warehouse/src/main/resources/application.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2V9rEvj8HgWJH0jXxX07WL32p2p" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/erik/dev/microservices-infrastructure",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a2b62cb2-0c6c-4626-ad46-fc1f677f324f" name="Changes" comment="" />
+      <created>1694259031579</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1694259031579</updated>
+      <workItem from="1694259032599" duration="26000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
