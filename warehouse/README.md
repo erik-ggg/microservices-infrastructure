@@ -49,6 +49,67 @@ mvn spring-boot:run
 
 The application will start on port 8081 by default.
 
+### Running with Podman/Docker
+The warehouse microservice includes a Dockerfile that can be used to run the application in a container using Podman or Docker.
+
+#### About the Dockerfile
+The Dockerfile uses a multi-stage build approach with a JDK image for building and a smaller JRE image for running the application. This creates a smaller, more efficient container and prevents common issues like permission errors.
+
+#### Building the Container Image
+```bash
+cd warehouse
+podman build -t warehouse-service .
+```
+
+#### Running the Container
+```bash
+podman run --network=host --name warehouse-service \
+  -e SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3306/warehouse \
+  -e SPRING_DATASOURCE_USERNAME=root \
+  -e SPRING_DATASOURCE_PASSWORD=root \
+  warehouse-service
+```
+
+#### Database Connectivity from Container
+
+When running in a container, you can connect to your MySQL database in several ways:
+
+1. **Using host.containers.internal** (as shown in the example above)
+
+2. **Using host network mode**:
+   ```bash
+   podman run --network=host --name warehouse-service \
+     -e SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3306/warehouse \
+     warehouse-service
+   ```
+
+3. **Using your host's actual IP address** (most reliable):
+   ```bash
+   podman run -p 8081:8081 --name warehouse-service \
+     -e SPRING_DATASOURCE_URL=jdbc:mysql://192.168.1.100:3306/warehouse \
+     warehouse-service
+   ```
+
+4. **Using a pod with MySQL container**:
+   ```bash
+   podman pod create --name warehouse-pod -p 8081:8081 -p 3306:3306
+   podman run --pod warehouse-pod --name mysql-db -e MYSQL_DATABASE=warehouse -e MYSQL_ROOT_PASSWORD=root -d mysql:8.0
+   podman run --pod warehouse-pod --name warehouse-service -e SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3306/warehouse warehouse-service
+   ```
+
+#### Troubleshooting Connection Issues
+
+If you encounter connection issues:
+- Check that MySQL is running and accessible
+- Verify network connectivity with `ping` or `nc` commands
+- Try a different connection approach from above
+- Check firewall settings and MySQL configuration
+
+Note: 
+- Adjust database parameters as needed for your environment
+- For Docker, replace `podman` with `docker` in the commands
+- The Dockerfile uses fully qualified image names for Podman compatibility
+
 ## API Documentation
 Once the application is running, you can access the Swagger UI at:
 ```
@@ -86,9 +147,9 @@ server:
   port: 8081
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/warehouse
-    username: root
-    password: root
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/warehouse}
+    username: ${SPRING_DATASOURCE_USERNAME:root}
+    password: ${SPRING_DATASOURCE_PASSWORD:root}
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     database: mysql
@@ -98,6 +159,8 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
 ```
+
+The configuration uses environment variables with default values, making it easy to run the application in different environments without code changes.
 
 ## Integration with Other Microservices
 The Warehouse Microservice is used by the Order Microservice to retrieve item information when processing orders. The Order service calls the Warehouse service's API to get item details by ID.
