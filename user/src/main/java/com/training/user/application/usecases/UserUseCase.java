@@ -11,7 +11,7 @@ public interface UserUseCase {
 
     OrderDTO getOrders(Long userID);
 
-    UUID purchaseItem(PurchaseDTO purchaseDTO);
+    void purchaseItem(PurchaseDTO purchaseDTO);
 
     UserDTO addUser(UserDTO userDTO);
 

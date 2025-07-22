@@ -26,13 +26,15 @@ public class UserService implements UserUseCase {
 
     @Override
     public OrderDTO getOrders(Long userID) {
-        UUID transactionId = UUID.randomUUID();
-        return orderRestTemplate.callUserOrdersRequest(userID, transactionId);
+
+        return orderRestTemplate.callUserOrdersRequest(userID);
     }
 
     @Override
-    public UUID purchaseItem(PurchaseDTO purchaseDTO) {
-        return null;
+    public void purchaseItem(PurchaseDTO purchaseDTO) {
+
+        // Call the order service to create a purchase
+        orderRestTemplate.createPurchase(purchaseDTO);
     }
 
     @Override

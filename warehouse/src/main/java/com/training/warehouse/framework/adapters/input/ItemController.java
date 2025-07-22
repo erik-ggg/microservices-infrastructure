@@ -2,11 +2,13 @@ package com.training.warehouse.framework.adapters.input;
 
 import com.training.warehouse.application.ports.input.ItemInputPort;
 import com.training.warehouse.domain.entity.Item;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/item")
 public class ItemController {
@@ -29,6 +31,8 @@ public class ItemController {
 
     @GetMapping("/all")
     public List<Item> getAll() {
+
+        log.info("Getting all items");
         return itemInputPort.getAll();
     }
 }

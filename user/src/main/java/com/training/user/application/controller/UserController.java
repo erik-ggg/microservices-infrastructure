@@ -1,5 +1,6 @@
 package com.training.user.application.controller;
 
+import com.training.user.application.dto.PurchaseDTO;
 import com.training.user.application.dto.UserDTO;
 import com.training.user.application.dto.order.OrderDTO;
 import com.training.user.application.service.UserService;
@@ -19,12 +20,12 @@ public class UserController {
     private final static Logger logger = LoggerFactory.getLogger(UserController.class);
     private final UserService userService;
 
-//    @PostMapping
-//    public UUID purchaseItem(@RequestBody PurchaseDTO purchaseDTO) {
-//        logger.info("Received request: POST /purchaseItem with params: ");
-//        logger.info("Created new purchase with OrderID {}", newUser);
-//
-//    }
+    @PostMapping("/purchase")
+    public void purchaseItem(@RequestBody PurchaseDTO purchaseDTO) {
+
+        logger.info("Received request: POST /purchaseItem with params: {}", purchaseDTO);
+        userService.purchaseItem(purchaseDTO);
+    }
 
     @GetMapping("/{userId}/orders")
     public OrderDTO getUserOrders(@PathVariable Long userId, @RequestParam UUID transactionId) {
@@ -34,7 +35,7 @@ public class UserController {
         return orders;
     }
 
-    @PostMapping
+    @PostMapping("/new")
     public UserDTO addNewUser(@RequestBody UserDTO userDTO) {
         logger.info("Received request: POST /addNewUser with params: ");
         var newUser = this.userService.addUser(userDTO);

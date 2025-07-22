@@ -31,3 +31,23 @@ spring:
     consumer:
       group-id: ${KAFKA_CONSUMER_GROUP_ID:loyalty-group}
       auto-offset-reset: earliest
+
+# Micrometer Tracing Configuration
+management:
+  tracing:
+    sampling:
+      probability: 1.0  # Sample 100% for testing
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,httptrace
+
+# Logging pattern to include trace IDs
+logging:
+  pattern:
+    level: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%X{traceId:-},%X{spanId:-}] %-5level %logger{36} - %msg%n"
+  level:
+    io.micrometer.tracing: DEBUG  # Enable tracing debug logs
